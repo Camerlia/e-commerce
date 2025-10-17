@@ -1,21 +1,20 @@
 "use client";
 
-// import useCartStore from "@/stores/cartStore";
+import useCartStore from "@/store/cartStore";
 import { ProductType } from "@/types/types";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
   const [productTypes, setProductTypes] = useState({
     size: product.sizes[0],
     color: product.colors[0],
   });
-  const [addToCart, setAddToCart] = useState({})
 
-//   const { addToCart } = useCartStore();
+    const { addToCart } = useCartStore();
 
   const handleProductType = ({
     type,
@@ -31,13 +30,13 @@ const ProductCard = ({ product }: { product: ProductType }) => {
   };
 
   const handleAddToCart = () => {
-    setAddToCart({
+    addToCart({
       ...product,
       quantity: 1,
       selectedSize: productTypes.size,
       selectedColor: productTypes.color,
     });
-    // toast.success("Product added to cart")
+    toast.success("Product added to cart")
   };
 
   return (
