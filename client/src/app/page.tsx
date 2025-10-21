@@ -10,8 +10,8 @@ const Homepage = async ({
   const category = (await searchParams).category;
   return (
     <div>
-    <div className=' relative aspect-[3/1] mb-12'>
-      <Image src={'/featured.png'} alt="featured image" fill />
+    <div className=' relative aspect-[3/1] my-12'>
+      <Image src={'/featured.jpg'} alt="featured image" fill className=" object-cover" />
       
     </div>
      <ProductList category={category} params="homepage" />

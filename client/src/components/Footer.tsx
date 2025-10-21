@@ -11,9 +11,9 @@ const Footer = () => {
     >
       <div className={"flex flex-col gap-4 items-center md:items-start"}>
         <Link href={"/"} className={'flex gap-2 items-center'}>
-          <Store className={"w-7 h-7 text-yellow-500"} />
+          <Store className={"w-7 h-7 text-white"} />
           <p
-            className={"text-md font-medium tracking-wider text-yellow-500 m-0"}
+            className={"text-md font-medium tracking-wider text-white m-0"}
           >
             Wishful Store
           </p>
